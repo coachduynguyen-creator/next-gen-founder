@@ -198,10 +198,19 @@ figure{margin:0}
 .nl .so{font-family:var(--f-tit);font-size:44px;line-height:1;letter-spacing:-.03em;color:var(--cam-dam);font-weight:700;margin-bottom:6px}
 .nl h4{font-family:var(--f-than);font-size:18px;font-weight:700;letter-spacing:-.015em;line-height:1.3}
 .nl p{font-size:15px;line-height:1.5;color:var(--ink-2)}
-.nl .dat{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line-2);font-size:14px;color:var(--ink-2)}
-.nl .dat b{color:var(--ink);font-weight:600}
-.ai-nen{margin-top:18px;font-size:14px;color:var(--ink-3);display:flex;gap:10px;align-items:baseline}
-.ai-nen b{font-family:var(--f-mono);font-weight:600;font-size:13px;letter-spacing:.06em;color:var(--cam-dam);flex:none}
+.nl .lam-duoc{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line-2)}
+.lam-nhan{margin-top:4px;color:var(--cam-dam)}
+.lam-duoc{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.lam-duoc li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.45;color:var(--ink)}
+.lam-duoc li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--cam-dam)}
+.ai-dai{margin-top:56px;padding-top:32px;border-top:1px solid var(--ink);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2.2fr);gap:40px;align-items:start}
+.ai-tieu .nhan{color:var(--cam-dam);display:block;margin-bottom:10px}
+.ai-tieu p{font-size:15.5px;line-height:1.6;color:var(--ink-2)}
+.ai-o{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 32px}
+.ai-o b{display:block;font-size:15.5px;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-bottom:5px}
+.ai-o p{font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:980px){.ai-dai{grid-template-columns:minmax(0,1fr);gap:24px}}
+@media (max-width:620px){.ai-o{grid-template-columns:minmax(0,1fr);gap:18px}}
 @media (max-width:980px){.nl{grid-template-columns:repeat(2,minmax(0,1fr))}.nl > div:nth-child(3){padding-left:0;border-left:0}.nl > div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media (max-width:560px){.nl{grid-template-columns:minmax(0,1fr)}.nl > div{padding-left:0!important;border-left:0!important;border-bottom:1px solid var(--line)}.nl > div:last-child{border-bottom:0}}
 
@@ -435,7 +444,7 @@ figure{margin:0}
 
 /* ============ 06 AI DỰNG: chân dung sân khấu và câu chuyện ============ */
 .ai2{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:56px;align-items:start}
-.ai2 .anh-khung{aspect-ratio:2/3}
+.ai2 .anh-khung{aspect-ratio:3/4}
 .ai2 .gioi h3{font-size:clamp(26px,2.8vw,34px);margin-bottom:6px}
 .ai2 .gioi .vai{font-size:15px;color:var(--ink-3);margin-bottom:20px}
 .ai2 .gioi p.doan{font-size:16.5px;line-height:1.6;color:var(--ink-2)}
@@ -447,7 +456,7 @@ figure{margin:0}
 .so-lieu b small{font-size:15px;letter-spacing:0;font-weight:600;margin-left:3px}
 .so-lieu span{display:block;font-size:13.5px;color:var(--ink-3);margin-top:6px;line-height:1.4}
 .so-ghi{font-size:13.5px;color:var(--ink-3);margin-top:12px}
-@media (max-width:900px){.ai2{grid-template-columns:minmax(0,1fr);gap:24px}.ai2 .anh-khung{max-width:420px;aspect-ratio:3/4}}
+@media (max-width:900px){.ai2{grid-template-columns:minmax(0,1fr);gap:24px}.ai2 .anh-khung{max-width:520px;aspect-ratio:4/3}}
 @media (max-width:560px){.so-lieu{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ============ 07 CÁCH THAM GIA: đường cong ba bước ============ */
@@ -536,9 +545,9 @@ figure{margin:0}
 /* ============ KHOÁ HÀNG THẲNG NHAU (lưới con) ============ */
 @supports (grid-template-rows: subgrid){
   /* bốn năng lực: số, tên, mô tả, dòng bạn đạt khi */
-  .nl{grid-template-rows:auto auto 1fr auto}
-  .nl > div{display:grid;grid-template-rows:subgrid;grid-row:span 4;gap:8px}
-  .nl .dat{margin-top:0}
+  .nl{grid-template-rows:auto auto 1fr auto auto}
+  .nl > div{display:grid;grid-template-rows:subgrid;grid-row:span 5;gap:8px}
+  .nl .lam-duoc{margin-top:0}
   /* ba chân dung: ảnh, tên, mô tả */
   .nganh3{grid-template-rows:auto auto 1fr}
   .nganh3 > div{display:grid;grid-template-rows:subgrid;grid-row:span 3;gap:0}
@@ -557,6 +566,10 @@ figure{margin:0}
   .dk{grid-template-rows:auto 1fr}
   .dk > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
   .dk p{margin-top:0}
+  /* dải AI */
+  .ai-o{grid-template-rows:auto 1fr}
+  .ai-o > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
+  .ai-o b{margin-bottom:0}
   /* bốn nhịp mỗi tháng và bốn mốc mười bốn ngày */
   .dong{grid-template-rows:auto 1fr}
   .dong > div{display:grid;grid-template-rows:subgrid;grid-row:span 2}
@@ -576,7 +589,7 @@ figure{margin:0}
 @media (max-width:980px){
   @supports (grid-template-rows: subgrid){
     .nl > div,.nganh3 > div,.quyet > div,.nam5 > div,.dk > div,.dong > div,.moc > div,.ch-chung > div{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}
-    .nl > div{gap:8px}.nl .dat{margin-top:auto}
+    .nl > div{gap:8px}.nl .lam-duoc{margin-top:auto}
     .nganh3 .anh-khung{margin-bottom:18px}.nganh3 > div > h3{margin-top:0}
     .quyet b,.nam5 b,.dong b,.moc b,.ch-chung b{margin-bottom:6px}
   }
@@ -690,7 +703,7 @@ figure{margin:0}
 <section class="phan la-gi" id="la-gi">
   <div class="bao">
     <div class="chia">
-      <figure class="anh-khung anh-lo"><img src="img/cd-phong-hoc.jpg" alt="Coach Duy Nguyễn đứng lớp trước một phòng người sáng lập và quản lý" width="1800" height="1200" loading="lazy"></figure>
+      <figure class="anh-khung anh-lo"><img src="img/cd-ca-phong.jpg" alt="Coach Duy Nguyễn đứng giữa một phòng đầy người sáng lập và quản lý" width="1800" height="1182" loading="lazy"></figure>
       <div class="hien">
         <h2>Một cộng đồng phát triển cho nhà sáng lập, <span>không phải thêm một nhóm trò chuyện</span></h2>
         <p class="dan">Next Gen Founder, nhà sáng lập thế hệ mới, là người đã nhận ra doanh nghiệp không thể lớn thêm chỉ bằng năng lực cá nhân mình, và biết biến những gì đang nằm trong đầu thành niềm tin trên thị trường, cách tư vấn, hệ thống làm việc và một mạng lưới cùng phát triển. Cộng đồng là nơi bạn đi con đường đó cùng những người có cùng tiêu chuẩn, và được một người đi trước giữ nhịp.</p>
@@ -712,28 +725,59 @@ figure{margin:0}
           <span class="so">01</span>
           <h4>Thương hiệu nhà sáng lập được tin cậy</h4>
           <p>Biến chuyên môn, trải nghiệm, quan điểm và tiêu chuẩn thật thành một cách xuất hiện nhất quán trước thị trường.</p>
-          <p class="dat"><b>Bạn đạt khi:</b> khách hiểu bạn đại diện cho điều gì và hợp với ai; nội dung cho thấy cách bạn nghĩ; câu chuyện và bằng chứng tạo niềm tin trước cuộc gặp.</p>
+          <span class="nhan lam-nhan">Việc bạn làm được</span>
+          <ul class="lam-duoc">
+            <li>Đứng nói trước một phòng khách hàng mà không cần kịch bản</li>
+            <li>Trả lời phỏng vấn và lên sân khấu đúng thông điệp của mình</li>
+            <li>Để đội đăng bài thay mình mà nội dung vẫn ra giọng mình</li>
+          </ul>
         </div>
         <div>
           <span class="so">02</span>
           <h4>Chuyên gia tư vấn được tin cậy</h4>
           <p>Giúp khách nhìn rõ vấn đề, hiểu lựa chọn và ra quyết định phù hợp mà không bị dồn ép.</p>
-          <p class="dat"><b>Bạn đạt khi:</b> khai thác bối cảnh trước khi đề xuất; tách triệu chứng khỏi vấn đề gốc; xử lý băn khoăn bằng sự rõ ràng; biết nói chưa phù hợp khi khách chưa sẵn sàng.</p>
+          <span class="nhan lam-nhan">Việc bạn làm được</span>
+          <ul class="lam-duoc">
+            <li>Dẫn một cuộc gặp với khách lớn mà không rơi vào thế xin</li>
+            <li>Hỏi đúng câu làm khách tự nhìn ra vấn đề của họ</li>
+            <li>Nói chưa phù hợp mà vẫn giữ được quan hệ và uy tín</li>
+          </ul>
         </div>
         <div>
           <span class="so">03</span>
           <h4>Người xây hệ thống</h4>
           <p>Chuyển kinh nghiệm và kết quả đang phụ thuộc vào bạn thành một cách làm mà người khác hiểu, thực hiện, đo và cải tiến được.</p>
-          <p class="dat"><b>Bạn đạt khi:</b> một luồng việc có kết quả rõ, một người chịu trách nhiệm cuối, tiêu chuẩn, dữ liệu để biết đang khoẻ hay lệch, và nhịp rà soát.</p>
+          <span class="nhan lam-nhan">Việc bạn làm được</span>
+          <ul class="lam-duoc">
+            <li>Giao một luồng việc cho quản lý và nghiệm thu bằng dữ liệu</li>
+            <li>Họp rà soát trong ba mươi phút vì mọi người đã nhìn cùng một bảng số</li>
+            <li>Vắng mặt một tuần mà công việc vẫn chạy đúng chuẩn</li>
+          </ul>
         </div>
         <div>
           <span class="so">04</span>
           <h4>Người kiến tạo cộng đồng</h4>
           <p>Tập hợp đúng người quanh một nhân dạng, một vấn đề hoặc một hướng đi chung, rồi tạo điều kiện để họ xây quan hệ và giúp nhau tiến bộ.</p>
-          <p class="dat"><b>Bạn đạt khi:</b> chọn đúng người và giữ chất lượng; người mới sớm thấy mình thuộc về; giá trị được tạo giữa các thành viên, không dồn hết vào bạn.</p>
+          <span class="nhan lam-nhan">Việc bạn làm được</span>
+          <ul class="lam-duoc">
+            <li>Chủ trì một buổi mà người tham dự tự kết nối được với nhau</li>
+            <li>Người mới được đón và hoà vào nhóm khi bạn không có mặt</li>
+            <li>Khách cũ giới thiệu người mới mà bạn không phải nhờ</li>
+          </ul>
         </div>
       </div>
-      <p class="ai-nen"><b>AI</b> được đưa vào cả bốn năng lực như năng lực nền: dùng để làm nhanh hơn việc đã đúng, không dùng để sản xuất thật nhiều nội dung.</p>
+    <div class="ai-dai hien">
+      <div class="ai-tieu">
+        <span class="nhan">AI là năng lực nền cho cả bốn</span>
+        <p>Không phải một môn học riêng. AI được đưa vào để làm nhanh hơn việc đã đúng, giữ nhịp và gom chất liệu thật từ công việc của bạn. Nó không thay phán đoán và không thay quan hệ con người.</p>
+      </div>
+      <div class="ai-o">
+        <div><b>Trong xây thương hiệu</b><p>Gom và sắp xếp chuyện thật từ công việc mỗi ngày, dựng nhịp xuất bản, kiểm bài trước khi đăng có đúng giọng mình không.</p></div>
+        <div><b>Trong chuẩn bị tư vấn</b><p>Dựng bối cảnh khách trước buổi gặp, luyện các tình huống khó, soát lại đề xuất xem đã bám nhu cầu thật chưa.</p></div>
+        <div><b>Trong vận hành hệ thống</b><p>Viết ra quy trình đang nằm trong đầu bạn, tóm tắt dữ liệu thành bảng số để đội nhìn cùng một chỗ.</p></div>
+        <div><b>Trong giữ nhịp cộng đồng</b><p>Nhớ bối cảnh từng thành viên, gợi ý ghép đúng người với đúng nhu cầu, chuẩn bị nội dung cho từng buổi.</p></div>
+      </div>
+    </div>
     </div>
   </div>
 </section>
@@ -985,7 +1029,7 @@ figure{margin:0}
 
     <div class="song-hd hien tre">
       <article class="hd cao">
-        <figure class="anh-khung anh-lo"><img src="img/cd-ket-noi.jpg" alt="Coach Duy cùng học viên sau một buổi chương trình" width="1500" height="1053" loading="lazy"></figure>
+        <figure class="anh-khung anh-lo"><img src="img/cd-dai-hoi.jpg" alt="Một buổi chương trình lớn do Coach Duy dẫn dắt" width="1600" height="739" loading="lazy"></figure>
         <div class="hd-chu">
           <b>Học và làm nghề</b>
           <p>Phân tích tình huống thật của thành viên, giờ làm chung, nhóm đồng hành nhỏ giữ nhịp cho nhau. Bạn mang bài toán của mình tới và mang cách làm về.</p>
@@ -993,7 +1037,7 @@ figure{margin:0}
       </article>
 
       <article class="hd">
-        <figure class="anh-khung anh-lo"><img src="img/cd-the-thao.jpg" alt="Buổi gắn kết ngoài trời của một cộng đồng doanh nhân" width="1500" height="1000" loading="lazy"></figure>
+        <figure class="anh-khung anh-lo"><img src="img/cd-networking.jpg" alt="Buổi gặp gỡ kết nối của những người làm kinh doanh" width="1500" height="891" loading="lazy"></figure>
         <div class="hd-chu">
           <b>Kết nối và cơ hội</b>
           <p>Bàn tròn theo ngành, những chuyến đi chung, giới thiệu có bối cảnh và có đồng ý hai bên, thăm doanh nghiệp của nhau để học cách người khác vận hành.</p>
@@ -1122,7 +1166,7 @@ figure{margin:0}
       <p class="dan">Không ai ở đây nói như người biết hết. Cộng đồng được dựng bởi người đã tự đi qua đúng con đường bạn đang đứng: xây uy tín bằng nội dung đều đặn, bán bằng niềm tin, rồi nhận ra doanh nghiệp không thể lớn nếu mọi việc vẫn chờ mình.</p>
     </div>
     <div class="ai2">
-      <figure class="anh-khung anh-lo"><img src="img/cd-chan-dung.jpg" alt="Coach Duy Nguyễn" width="940" height="1400" loading="lazy"></figure>
+      <figure class="anh-khung anh-lo"><img src="img/cd-gio-tay.jpg" alt="Coach Duy Nguyễn dẫn một chương trình có hàng trăm người tham dự" width="1500" height="999" loading="lazy"></figure>
       <div class="gioi hien">
         <h3>Coach Duy Nguyễn</h3>
         <p class="vai">Sáng lập Next Step Group. Tác giả phương pháp The Trusted Advisor và CDN Trust Orbit.</p>
