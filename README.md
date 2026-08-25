@@ -1,8 +1,7 @@
-# Cộng đồng Next Gen Founder
+# next-gen-founder (kho cũ, chỉ còn chuyển hướng)
 
-Trang đăng ký danh sách chờ của Cộng đồng Next Gen Founder, thương hiệu Next Gen Founder by Coach Duy Nguyễn.
+Trang Cộng đồng Next Gen Founder đã chuyển sang **https://coachduynguyen.vn/cong-dong/**
+từ ngày 25/08/2026. Kho này chỉ còn một trang chuyển hướng, để những đường dẫn
+github.io ai đó đã lưu trước đây vẫn tới đúng chỗ.
 
-Trang chạy tại https://coachduynguyen-creator.github.io/next-gen-founder/
-
-Bản gốc và ghi chú thiết kế nằm trong vault: `02 Projects/NSG/10 Chiến lược Next Gen Founder/`.
-Trang này sẽ được chuyển thành một trang con của trang cá nhân coachduynguyen.vn.
+Sửa nội dung trang Cộng đồng tại kho `coach-duy-nguyen`, thư mục `cong-dong/`.
